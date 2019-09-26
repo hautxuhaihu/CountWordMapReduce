@@ -14,8 +14,8 @@ import java.util.Map;
 
 public class statisticDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
-        Path input = new Path("/songciCount/part-r-00000");
-        Path output = new Path("/songciResult");
+        Path input = new Path("/纳兰词全集计算/part-r-00000");
+        Path output = new Path("/纳兰词全集结果");
         Configuration configuration = new Configuration ();
         configuration.set ("fs.defaultFS", "hdfs://192.168.43.128:9000");
         Job job = Job.getInstance (configuration);

@@ -11,8 +11,8 @@ import java.io.IOException;
 
 public class WordCountDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
-        Path input = new Path("/data/宋词.txt");
-        Path output = new Path("/songciCount");
+        Path input = new Path("/data/纳兰词全集.txt");
+        Path output = new Path("/纳兰词全集计算");
         Configuration configuration = new Configuration ();
         configuration.set ("fs.defaultFS", "hdfs://192.168.43.128:9000");
         Job job = Job.getInstance (configuration);

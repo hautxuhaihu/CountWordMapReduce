@@ -14,10 +14,7 @@ public class statisticReducer extends Reducer<NullWritable, MapWritable,Text,Lon
                 mapWritable.put(key,item.get(key));
             }
         }
-        ArrayList <Integer> arrayList = new ArrayList();
-        arrayList.add(0,0);
-        arrayList.add(1,0);
-        arrayList.add(2,0);
+
         HashMap<String,Integer> result = new HashMap<>();
         String firstName = "first";
         String secondName = "second";
@@ -35,6 +32,15 @@ public class statisticReducer extends Reducer<NullWritable, MapWritable,Text,Lon
                 secondName = firstName;
                 firstName = writable.toString();
                 result.put(firstName,num);//加入新的最大的
+            }else if(num>result.get(secondName)){
+                result.remove(thirdName);//最小的去掉
+                thirdName = secondName;
+                secondName = writable.toString();
+                result.put(secondName,num);//加入新的第二大的
+            }else if(num>result.get(thirdName)){
+                result.remove(thirdName);//最小的去掉
+                thirdName = writable.toString();
+                result.put(thirdName,num);//加入新的第三大的
             }
         }
         context.write (new Text(firstName+":"),new LongWritable(result.get(firstName)));

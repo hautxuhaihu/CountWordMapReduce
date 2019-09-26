@@ -15,6 +15,6 @@ public class HDFSAPI {
             fileSystem.mkdirs(path);
             System.out.println("创建成功");
         }
-        fileSystem.copyFromLocalFile(new Path("D:\\宋词.txt"),path);
+        fileSystem.copyFromLocalFile(new Path("D:\\纳兰词全集.txt"),path);
     }
 }
