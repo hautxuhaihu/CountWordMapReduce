@@ -31,7 +31,7 @@ public class statisticDriver {
 
         job.setMapOutputKeyClass (NullWritable.class);
         job.setMapOutputValueClass (MapWritable.class);
-        job.setOutputKeyClass (NullWritable.class);
+        job.setOutputKeyClass (Text.class);
         job.setOutputValueClass (LongWritable.class);
 
         FileInputFormat.setInputPaths (job,input);

@@ -11,10 +11,6 @@ public class statisticMapper extends Mapper<LongWritable, Text, NullWritable, Ma
         String[] array = value.toString ().split ("\t");
         MapWritable mapWritable = new MapWritable();
         mapWritable.put(new Text(array[0]),new LongWritable(Integer.valueOf(array[1])));
-//        for(int i=0;i<array.length;i++){
-//            mapWritable.put(new Text(array[i]),new LongWritable(Integer.valueOf(array[i+1])));
-//            i = i+1;
-//        }
         context.write (NullWritable.get(),mapWritable);
     }
 }
