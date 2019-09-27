@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.util.*;
 
 public class statisticReducer extends Reducer<NullWritable, MapWritable,Text,LongWritable> {
+    /**
+     * 将mapper传过来的数据进行统计操作
+     * @param nullWritable 因为mapper传来的数据没有键值
+     * @param values    mapper传来的数据
+     * @param context   上下文
+     */
     @Override
     protected void reduce(NullWritable nullWritable, Iterable<MapWritable> values, Context context) throws IOException, InterruptedException {
         MapWritable mapWritable = new MapWritable();
